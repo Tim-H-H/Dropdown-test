@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f9f9f9;
+    color: #001b55;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 40px auto;
+    
+}
+
+h1{
+    margin-bottom: 10px;
+    margin: auto;
+}
+
+details {
+    border-top: 1px solid #ddd;
+    padding: 12px 0;
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 25px;
+}
+
+summary::webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: "+";
+    position: absolute;
+    top: 0;
+    right: 0;
+    float: right;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+    content: "-";
+    transform: rotate(180deg);
+}
+
+.innehåll {
+    margin-top: 10px;
+    padding-left: 10px;
+    color: #333;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease, opacity 1s ease;    
+}
+
+details[open] .innehåll {
+    max-height: 1200px;
+    opacity: 1;
+}
+
+/* -------------------------------------------------------------------------------- */
+
+.dragspel {
+    border-top: 10px;
+    border-top: 1px solid #ddd;
+
+}
+
+.dragspel-artikel {
+    position: absolute;
+    border-top: 1px solid #ddd;
+    padding: 12px 0;
+    width: 700px;
+    height: auto;
+
+}
+
+.dragspel-artikel input {
+    display: none;
+}
+
+.dragspel-artikel label {
+    display: block;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 12px 0;
+    position: relative;
+    user-select: none;
+}
+
+.dragspel-artikel label::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 12px;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.dragspel-artikel input:checked + label::after {
+    content: "-";
+    transform: rotate(180deg);
+}
+
+.innehåll-2 {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    height: auto;
+}
+
+.dragspel-artikel input:checked ~ .innehåll-2 {
+    max-height: 1200px;
+    opacity: 1;
+}
+
+.innehåll-2 img {
+    max-width: 100%;
+    height: 700px;
+    margin-top: 10px;
+    border-radius: 8px;
+
+}
